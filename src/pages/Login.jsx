@@ -6,7 +6,7 @@ import { Mail, Lock, Eye, EyeOff, LogIn, ArrowRight } from 'lucide-react';
 
 export default function Login() {
     const navigate = useNavigate();
-    const { login } = useAuth();
+    const { login, register } = useAuth();
     
     const [formData, setFormData] = useState({
         email: '',
@@ -39,6 +39,47 @@ export default function Login() {
             }
         } catch (err) {
             setError('An error occurred during login');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleAdminLogin = async () => {
+        setError('');
+        setIsLoading(true);
+
+        try {
+            // Check if admin already exists
+            const users = JSON.parse(localStorage.getItem('pulse_users') || '[]');
+            const adminExists = users.find(u => u.email === 'admin@pulse.dev');
+
+            if (!adminExists) {
+                // Create admin account
+                const result = await register({
+                    name: 'Admin',
+                    email: 'admin@pulse.dev',
+                    major: 'Administrator',
+                    studentId: 'ADMIN001',
+                    joinedDate: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+                }, 'admin123');
+                
+                if (result.success) {
+                    navigate('/dashboard');
+                } else {
+                    setError('Failed to create admin account');
+                }
+            } else {
+                // Login with existing admin
+                const result = await login('admin@pulse.dev', 'admin123');
+                if (result.success) {
+                    navigate('/dashboard');
+                } else {
+                    setError('Admin login failed');
+                }
+            }
+        } catch (err) {
+            setError('Failed to create/login admin account');
+            console.error(err);
         } finally {
             setIsLoading(false);
         }
@@ -154,6 +195,38 @@ export default function Login() {
                             )}
                         </button>
                     </motion.form>
+
+                    {/* Admin Login Button */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                        className="mt-4"
+                    >
+                        <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-slate-200"></div>
+                            </div>
+                            <div className="relative flex justify-center text-sm">
+                                <span className="px-2 bg-white text-slate-500">or</span>
+                            </div>
+                        </div>
+                        
+                        <button
+                            type="button"
+                            onClick={handleAdminLogin}
+                            disabled={isLoading}
+                            className="mt-4 w-full py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-xl font-bold hover:shadow-lg transform hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        >
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                            </svg>
+                            Login as Admin (Testing)
+                        </button>
+                        <p className="mt-2 text-xs text-center text-slate-500">
+                            Auto-creates admin account • All courses unlocked
+                        </p>
+                    </motion.div>
 
                     {/* Sign Up Link */}
                     <motion.p 
