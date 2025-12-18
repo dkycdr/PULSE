@@ -1,10 +1,17 @@
-import React from 'react';
-import Editor, { useMonaco } from '@monaco-editor/react';
+import React, { useEffect, useState } from 'react';
+import Editor, { useMonaco, loader } from '@monaco-editor/react';
 import clsx from 'clsx';
-import { useEffect } from 'react';
+
+// Configure Monaco to load faster
+loader.config({
+    paths: {
+        vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs'
+    }
+});
 
 export default function EditorComponent({ files, activeFile, onFileChange, onCodeChange }) {
     const monaco = useMonaco();
+    const [isEditorReady, setIsEditorReady] = useState(false);
 
     // Define Custom 'PULSE' Theme
     useEffect(() => {
@@ -67,11 +74,13 @@ export default function EditorComponent({ files, activeFile, onFileChange, onCod
                     defaultValue={files.find(f => f.name === activeFile)?.content || ''}
                     value={files.find(f => f.name === activeFile)?.content || ''}
                     onChange={handleEditorChange}
+                    onMount={() => setIsEditorReady(true)}
                     loading={
                         <div className="h-full flex items-center justify-center bg-[#0a192f] text-gray-400">
                             <div className="text-center">
                                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
-                                <p>Loading Editor...</p>
+                                <p className="text-sm">Loading Editor...</p>
+                                <p className="text-xs mt-2 text-gray-600">This may take a moment on first load</p>
                             </div>
                         </div>
                     }
