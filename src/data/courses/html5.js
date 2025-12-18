@@ -8,6 +8,542 @@ export const html5Course = {
     
     units: [
         // ============================================
+        // UNIT 0: Absolute Beginner - Start from ZERO
+        // ============================================
+        {
+            id: 'html5-unit-0',
+            title: 'Absolute Beginner - Start from Zero',
+            description: 'Never coded before? Perfect! We explain EVERYTHING step-by-step.',
+            items: [
+                {
+                    id: 'html5-0-1',
+                    type: CONTENT_TYPES.INFORMATIONAL,
+                    title: 'What is HTML? (Complete Beginner Guide)',
+                    duration: '10 min read',
+                    content: `
+# What is HTML? - Explained Like You're 5
+
+## The Simple Answer
+
+Imagine you're writing a letter. You have:
+- **Title** at the top
+- **Paragraphs** of text
+- **Lists** of things
+- **Pictures** to show
+- **Links** to other pages
+
+HTML is just a way to tell the computer: "This is a title", "This is a paragraph", "This is a picture".
+
+That's it! HTML is just **labeling** different parts of your content.
+
+## Real Example
+
+### What You Want to Show:
+```
+My First Website
+Welcome to my page!
+This is my first website.
+```
+
+### How You Write it in HTML:
+\`\`\`html
+<h1>My First Website</h1>
+<p>Welcome to my page!</p>
+<p>This is my first website.</p>
+\`\`\`
+
+See? You just wrap text in **tags** like \`<h1>\` and \`<p>\` to label what they are!
+
+## What Are Tags?
+
+Tags are like **labels** or **containers**. They have:
+- **Opening tag**: \`<p>\` (starts the label)
+- **Content**: The actual text
+- **Closing tag**: \`</p>\` (ends the label)
+
+\`\`\`html
+<p>This is a paragraph</p>
+ ↑              ↑
+opening      closing
+ tag           tag
+\`\`\`
+
+## Common Tags (You'll Use These A LOT!)
+
+| Tag | What It Does | Example |
+|-----|--------------|---------|
+| \`<h1>\` | Big heading | \`<h1>Title</h1>\` |
+| \`<p>\` | Paragraph | \`<p>Some text</p>\` |
+| \`<a>\` | Link | \`<a href="url">Click me</a>\` |
+| \`<img>\` | Image | \`<img src="pic.jpg">\` |
+| \`<div>\` | Container/box | \`<div>Content here</div>\` |
+| \`<button>\` | Button | \`<button>Click</button>\` |
+
+## Your First HTML Page
+
+Every HTML page has the same basic structure:
+
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page Title</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is my first webpage.</p>
+</body>
+</html>
+\`\`\`
+
+Let's break it down:
+
+1. **\`<!DOCTYPE html>\`** - Tells browser "this is HTML5"
+2. **\`<html>\`** - Wraps everything
+3. **\`<head>\`** - Info about the page (not visible)
+4. **\`<title>\`** - Shows in browser tab
+5. **\`<body>\`** - Everything you see on the page
+6. **\`<h1>\`** - Your heading
+7. **\`<p>\`** - Your paragraph
+
+## Important Rules
+
+1. **Most tags need closing tags**
+   - ✅ \`<p>Text</p>\`
+   - ❌ \`<p>Text\` (missing closing tag!)
+
+2. **Some tags are self-closing**
+   - \`<img src="pic.jpg">\` (no closing tag needed)
+   - \`<br>\` (line break)
+   - \`<hr>\` (horizontal line)
+
+3. **Tags can be nested (inside each other)**
+   \`\`\`html
+   <div>
+       <h1>Title</h1>
+       <p>Paragraph inside div</p>
+   </div>
+   \`\`\`
+
+4. **Indentation makes it readable**
+   \`\`\`html
+   <!-- Good (easy to read) -->
+   <div>
+       <p>Text</p>
+   </div>
+   
+   <!-- Bad (hard to read) -->
+   <div><p>Text</p></div>
+   \`\`\`
+
+## Common Beginner Mistakes
+
+❌ **Forgetting closing tag:**
+\`\`\`html
+<p>This is wrong
+\`\`\`
+
+✅ **Correct:**
+\`\`\`html
+<p>This is right</p>
+\`\`\`
+
+❌ **Wrong order (tags must close in reverse order):**
+\`\`\`html
+<div><p>Wrong</div></p>
+\`\`\`
+
+✅ **Correct:**
+\`\`\`html
+<div><p>Right</p></div>
+\`\`\`
+
+❌ **Typo in tag name:**
+\`\`\`html
+<pargraph>Wrong</pargraph>
+\`\`\`
+
+✅ **Correct:**
+\`\`\`html
+<p>Right</p>
+\`\`\`
+
+## What HTML Can't Do
+
+HTML is ONLY for structure. It can't:
+- ❌ Make things pretty (that's CSS)
+- ❌ Make things interactive (that's JavaScript)
+- ❌ Do math or logic (that's JavaScript)
+
+HTML just says "this is a heading", "this is a paragraph", etc.
+
+## Next Steps
+
+Now that you know WHAT HTML is, let's write your very first HTML page!
+                    `
+                },
+                {
+                    id: 'html5-0-2',
+                    type: CONTENT_TYPES.LESSON,
+                    title: 'Your First HTML Page - Baby Steps',
+                    duration: '15 min',
+                    content: `
+# Your First HTML Page - Let's Do This Together!
+
+## Step 1: The Basic Structure
+
+Every HTML page starts with this skeleton:
+
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    <!-- Your content goes here -->
+</body>
+</html>
+\`\`\`
+
+**Don't worry!** You'll type this so many times it'll become automatic.
+
+## Step 2: Add a Heading
+
+Headings go from \`<h1>\` (biggest) to \`<h6>\` (smallest):
+
+\`\`\`html
+<h1>This is HUGE</h1>
+<h2>This is big</h2>
+<h3>This is medium</h3>
+<h4>This is small</h4>
+<h5>This is smaller</h5>
+<h6>This is smallest</h6>
+\`\`\`
+
+**Rule:** Use \`<h1>\` for your main title. Only ONE \`<h1>\` per page!
+
+## Step 3: Add Paragraphs
+
+Paragraphs use \`<p>\` tag:
+
+\`\`\`html
+<p>This is a paragraph of text.</p>
+<p>This is another paragraph.</p>
+\`\`\`
+
+**Tip:** Each \`<p>\` automatically adds space above and below.
+
+## Step 4: Add a Link
+
+Links use \`<a>\` tag with \`href\` attribute:
+
+\`\`\`html
+<a href="https://presuniv.ac.id">Visit PresUniv</a>
+\`\`\`
+
+- **\`href\`** = where the link goes
+- **Text between tags** = what you click
+
+## Step 5: Add an Image
+
+Images use \`<img>\` tag:
+
+\`\`\`html
+<img src="logo.png" alt="Logo">
+\`\`\`
+
+- **\`src\`** = image file path
+- **\`alt\`** = description (for screen readers and if image fails)
+
+**Note:** \`<img>\` doesn't need a closing tag!
+
+## Step 6: Make a List
+
+### Unordered List (bullets):
+\`\`\`html
+<ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ul>
+\`\`\`
+
+### Ordered List (numbers):
+\`\`\`html
+<ol>
+    <li>First step</li>
+    <li>Second step</li>
+    <li>Third step</li>
+</ol>
+\`\`\`
+
+---
+
+## Your Mission: Build Your First Page!
+
+Create a simple "About Me" page with:
+- A heading with your name
+- A paragraph about yourself
+- A list of your hobbies
+- A link to President University website
+                    `,
+                    tasks: [
+                        { id: 1, description: 'Add <!DOCTYPE html> at the top', completed: false, regex: /<!DOCTYPE html>/i },
+                        { id: 2, description: 'Add <html>, <head>, and <body> tags', completed: false, regex: /<html>[\s\S]*<head>[\s\S]*<body>/i },
+                        { id: 3, description: 'Add an <h1> heading', completed: false, regex: /<h1>.*<\/h1>/ },
+                        { id: 4, description: 'Add at least one <p> paragraph', completed: false, regex: /<p>.*<\/p>/ },
+                        { id: 5, description: 'Add a list (<ul> or <ol>)', completed: false, regex: /<(ul|ol)>[\s\S]*<li>[\s\S]*<\/(ul|ol)>/ }
+                    ],
+                    files: [
+                        { name: 'index.html', language: 'html', content: `<!-- Write your first HTML page here! -->
+
+<!-- Step 1: Add the basic structure -->
+
+
+<!-- Step 2: Add a heading with your name -->
+
+
+<!-- Step 3: Add a paragraph about yourself -->
+
+
+<!-- Step 4: Add a list of your hobbies -->
+
+
+<!-- Step 5: Add a link to PresUniv -->
+
+` },
+                        { name: 'style.css', language: 'css', content: '' },
+                        { name: 'script.js', language: 'javascript', content: '' }
+                    ]
+                },
+                {
+                    id: 'html5-0-3',
+                    type: CONTENT_TYPES.INFORMATIONAL,
+                    title: 'Understanding HTML Attributes',
+                    duration: '8 min read',
+                    content: `
+# HTML Attributes - Extra Information for Tags
+
+## What Are Attributes?
+
+Attributes give **extra information** to tags. They go inside the opening tag:
+
+\`\`\`html
+<tag attribute="value">Content</tag>
+     ↑
+  attribute
+\`\`\`
+
+## Common Attributes
+
+### 1. href (for links)
+
+Tells where the link goes:
+
+\`\`\`html
+<a href="https://presuniv.ac.id">PresUniv</a>
+<a href="about.html">About Page</a>
+<a href="#section">Jump to section</a>
+\`\`\`
+
+### 2. src (for images)
+
+Tells where the image file is:
+
+\`\`\`html
+<img src="photo.jpg">
+<img src="images/logo.png">
+<img src="https://example.com/pic.jpg">
+\`\`\`
+
+### 3. alt (for images)
+
+Description of image (important for accessibility!):
+
+\`\`\`html
+<img src="cat.jpg" alt="A cute orange cat">
+\`\`\`
+
+**Why important?**
+- Screen readers read it to blind users
+- Shows if image fails to load
+- Helps Google understand your images
+
+### 4. id (unique identifier)
+
+Gives a unique name to ONE element:
+
+\`\`\`html
+<div id="header">Header content</div>
+<p id="intro">Introduction paragraph</p>
+\`\`\`
+
+**Rules:**
+- Each id must be unique (only ONE element can have that id)
+- Use for JavaScript and CSS targeting
+- Use lowercase and hyphens: \`id="my-section"\`
+
+### 5. class (group identifier)
+
+Groups multiple elements:
+
+\`\`\`html
+<p class="highlight">This is highlighted</p>
+<p class="highlight">This is also highlighted</p>
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+\`\`\`
+
+**Rules:**
+- Multiple elements can have the same class
+- One element can have multiple classes: \`class="card highlight"\`
+- Use for CSS styling
+
+### 6. style (inline CSS)
+
+Add CSS directly (not recommended, but good to know):
+
+\`\`\`html
+<p style="color: red; font-size: 20px;">Red text</p>
+\`\`\`
+
+**Better way:** Use external CSS file!
+
+### 7. title (tooltip)
+
+Shows tooltip on hover:
+
+\`\`\`html
+<p title="This is a tooltip">Hover over me!</p>
+<a href="#" title="Click to learn more">Link</a>
+\`\`\`
+
+## Multiple Attributes
+
+You can use multiple attributes on one tag:
+
+\`\`\`html
+<img src="photo.jpg" alt="My photo" width="300" height="200">
+<a href="page.html" class="button" id="main-link">Click me</a>
+\`\`\`
+
+**Rules:**
+- Separate with spaces
+- Order doesn't matter
+- Always use quotes around values
+
+## Attribute Syntax Rules
+
+✅ **Correct:**
+\`\`\`html
+<a href="page.html">Link</a>
+<img src="pic.jpg" alt="Picture">
+\`\`\`
+
+❌ **Wrong (no quotes):**
+\`\`\`html
+<a href=page.html>Link</a>
+\`\`\`
+
+❌ **Wrong (no value):**
+\`\`\`html
+<a href>Link</a>
+\`\`\`
+
+❌ **Wrong (space in value without quotes):**
+\`\`\`html
+<img alt=My Picture>
+\`\`\`
+
+## Boolean Attributes
+
+Some attributes don't need values:
+
+\`\`\`html
+<input type="text" disabled>
+<input type="checkbox" checked>
+<script src="app.js" defer></script>
+\`\`\`
+
+Just writing the attribute name means "true"!
+
+## id vs class - When to Use?
+
+| Use \`id\` when... | Use \`class\` when... |
+|-------------------|----------------------|
+| Only ONE element needs it | Multiple elements need same style |
+| JavaScript needs to find it | CSS styling |
+| Creating anchor links | Grouping similar elements |
+
+**Example:**
+\`\`\`html
+<!-- id: unique header -->
+<header id="main-header">Site Header</header>
+
+<!-- class: multiple cards -->
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+<div class="card">Card 3</div>
+\`\`\`
+
+## Pro Tips
+
+1. **Always use lowercase** for attributes: \`href\`, not \`HREF\`
+2. **Always use quotes** around values: \`href="page.html"\`
+3. **Use meaningful names** for id and class: \`id="user-profile"\`, not \`id="x1"\`
+4. **Don't overuse id** - use class for styling
+5. **Always add alt to images** - it's important for accessibility!
+
+Now you're an attribute expert! 🎯
+                    `
+                },
+                {
+                    id: 'html5-0-quiz',
+                    type: CONTENT_TYPES.QUIZ,
+                    title: 'Absolute Beginner Quiz',
+                    duration: '5 min',
+                    questions: [
+                        {
+                            id: 'q1',
+                            question: 'What does HTML stand for?',
+                            options: ['Hyper Text Markup Language', 'High Tech Modern Language', 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language'],
+                            correctIndex: 0,
+                            explanation: 'HTML = HyperText Markup Language. It\'s the standard language for creating web pages.'
+                        },
+                        {
+                            id: 'q2',
+                            question: 'Which tag is used for the largest heading?',
+                            options: ['<head>', '<h6>', '<heading>', '<h1>'],
+                            correctIndex: 3,
+                            explanation: '<h1> is the largest heading. Headings go from <h1> (biggest) to <h6> (smallest).'
+                        },
+                        {
+                            id: 'q3',
+                            question: 'What is wrong with this HTML? <p>Hello World',
+                            options: ['Nothing wrong', 'Missing closing tag </p>', 'Wrong tag name', 'Missing quotes'],
+                            correctIndex: 1,
+                            explanation: 'Most HTML tags need a closing tag. Correct: <p>Hello World</p>'
+                        },
+                        {
+                            id: 'q4',
+                            question: 'Which attribute tells where a link goes?',
+                            options: ['src', 'href', 'link', 'url'],
+                            correctIndex: 1,
+                            explanation: 'href attribute specifies the URL: <a href="page.html">Link</a>'
+                        },
+                        {
+                            id: 'q5',
+                            question: 'What\'s the difference between id and class?',
+                            options: ['No difference', 'id is unique, class can be reused', 'class is unique, id can be reused', 'id is for CSS, class is for JavaScript'],
+                            correctIndex: 1,
+                            explanation: 'id must be unique (one per page), class can be used on multiple elements.'
+                        }
+                    ]
+                }
+            ]
+        },
+        // ============================================
         // UNIT 1: Introduction to HTML
         // ============================================
         {

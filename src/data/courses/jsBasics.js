@@ -8,6 +8,758 @@ export const jsBasicsCourse = {
     
     units: [
         // ============================================
+        // UNIT 0: Absolute Beginner - Start from ZERO
+        // ============================================
+        {
+            id: 'js-unit-0',
+            title: 'Absolute Beginner - Programming from Zero',
+            description: 'Never programmed before? Perfect! We explain programming concepts from scratch.',
+            items: [
+                {
+                    id: 'js-0-1',
+                    type: CONTENT_TYPES.INFORMATIONAL,
+                    title: 'What is Programming? (Complete Beginner Guide)',
+                    duration: '12 min read',
+                    content: `
+# What is Programming? - Explained Like You're 5
+
+## The Simple Answer
+
+Programming is giving **instructions** to a computer, step-by-step, like a recipe.
+
+Imagine you're teaching a robot to make a sandwich:
+1. Pick up bread
+2. Put peanut butter on bread
+3. Put jelly on bread
+4. Put bread slices together
+
+That's programming! You tell the computer EXACTLY what to do, in order.
+
+## What is JavaScript?
+
+JavaScript is a **programming language** - a way to write instructions that computers understand.
+
+### The Web Trinity
+
+| Technology | Role | What It Does |
+|------------|------|--------------|
+| **HTML** | Structure | "This is a button" |
+| **CSS** | Styling | "Make the button blue" |
+| **JavaScript** | Behavior | "When button is clicked, do something" |
+
+**Example:**
+\`\`\`html
+<!-- HTML: Create button -->
+<button id="myButton">Click Me</button>
+
+<!-- CSS: Make it pretty -->
+<style>
+  #myButton { background: blue; color: white; }
+</style>
+
+<!-- JavaScript: Make it DO something -->
+<script>
+  document.getElementById('myButton').onclick = function() {
+    alert('Hello!');
+  };
+</script>
+\`\`\`
+
+## What Can JavaScript Do?
+
+JavaScript can:
+- ✅ Show/hide content
+- ✅ Validate forms (check if email is valid)
+- ✅ Create animations
+- ✅ Load data without refreshing page
+- ✅ Build games
+- ✅ Calculate things
+- ✅ Store data
+- ✅ And much more!
+
+**Real Examples:**
+- Facebook: Updates feed without refresh
+- Google Maps: Drag and zoom
+- Netflix: Play videos
+- Gmail: Send emails without page reload
+
+## Your First JavaScript
+
+Let's write the simplest JavaScript ever:
+
+\`\`\`javascript
+alert('Hello World!');
+\`\`\`
+
+That's it! This shows a popup with "Hello World!".
+
+## Programming Concepts (Simple Explanations)
+
+### 1. Variables (Storage Boxes)
+
+Variables **store** information, like a box with a label:
+
+\`\`\`javascript
+let name = "John";
+let age = 20;
+let isStudent = true;
+\`\`\`
+
+Think of it like:
+- Box labeled "name" contains "John"
+- Box labeled "age" contains 20
+- Box labeled "isStudent" contains true
+
+### 2. Functions (Reusable Instructions)
+
+Functions are **recipes** you can use over and over:
+
+\`\`\`javascript
+function sayHello() {
+    alert('Hello!');
+}
+
+sayHello();  // Use the recipe
+sayHello();  // Use it again
+\`\`\`
+
+### 3. Conditions (Making Decisions)
+
+Conditions let the computer **make choices**:
+
+\`\`\`javascript
+let age = 18;
+
+if (age >= 18) {
+    alert('You are an adult');
+} else {
+    alert('You are a minor');
+}
+\`\`\`
+
+Like: "IF it's raining, bring umbrella. ELSE, don't bring umbrella."
+
+### 4. Loops (Repeating Actions)
+
+Loops **repeat** actions:
+
+\`\`\`javascript
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+// Prints: 1, 2, 3, 4, 5
+\`\`\`
+
+Like: "Count from 1 to 5"
+
+## How to Run JavaScript
+
+### Method 1: Browser Console (Easiest!)
+
+1. Open any website
+2. Press **F12** (or right-click → Inspect)
+3. Click **Console** tab
+4. Type JavaScript and press Enter!
+
+Try it:
+\`\`\`javascript
+alert('Hello!');
+console.log('This appears in console');
+2 + 2  // Shows 4
+\`\`\`
+
+### Method 2: In HTML File
+
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    
+    <script>
+        alert('This runs when page loads!');
+    </script>
+</body>
+</html>
+\`\`\`
+
+### Method 3: External JS File (Best!)
+
+**index.html:**
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script src="script.js"></script>
+</body>
+</html>
+\`\`\`
+
+**script.js:**
+\`\`\`javascript
+alert('Hello from external file!');
+\`\`\`
+
+## Important JavaScript Rules
+
+### 1. Case Sensitive
+
+\`\`\`javascript
+let name = "John";   // ✅ Correct
+let Name = "John";   // ❌ Different variable!
+let NAME = "John";   // ❌ Also different!
+\`\`\`
+
+### 2. Semicolons (Optional but Recommended)
+
+\`\`\`javascript
+let x = 5;  // ✅ With semicolon
+let y = 10  // ✅ Also works, but use semicolons!
+\`\`\`
+
+### 3. Comments (Notes for Humans)
+
+\`\`\`javascript
+// This is a single-line comment
+
+/* This is a
+   multi-line
+   comment */
+
+let age = 20;  // You can also comment at end of line
+\`\`\`
+
+### 4. Strings Need Quotes
+
+\`\`\`javascript
+let name = "John";   // ✅ Double quotes
+let name = 'John';   // ✅ Single quotes
+let name = \`John\`;   // ✅ Backticks (template literals)
+let name = John;     // ❌ ERROR! Needs quotes!
+\`\`\`
+
+## Common Beginner Mistakes
+
+❌ **Forgetting quotes around text:**
+\`\`\`javascript
+let name = John;  // ERROR!
+\`\`\`
+
+✅ **Correct:**
+\`\`\`javascript
+let name = "John";
+\`\`\`
+
+❌ **Using = instead of == for comparison:**
+\`\`\`javascript
+if (age = 18) {  // This ASSIGNS 18, doesn't compare!
+\`\`\`
+
+✅ **Correct:**
+\`\`\`javascript
+if (age == 18) {  // This COMPARES
+\`\`\`
+
+❌ **Forgetting parentheses in function call:**
+\`\`\`javascript
+sayHello;  // Doesn't run the function!
+\`\`\`
+
+✅ **Correct:**
+\`\`\`javascript
+sayHello();  // Runs the function
+\`\`\`
+
+## console.log() - Your Best Friend
+
+\`console.log()\` prints to the console (F12 → Console):
+
+\`\`\`javascript
+console.log('Hello!');
+console.log(2 + 2);
+console.log('Age:', 20);
+
+let name = "John";
+console.log('Name is:', name);
+\`\`\`
+
+**Use it to debug!** Print values to see what's happening.
+
+## Next Steps
+
+Now that you understand WHAT programming is, let's write your first JavaScript code step-by-step!
+                    `
+                },
+                {
+                    id: 'js-0-2',
+                    type: CONTENT_TYPES.LESSON,
+                    title: 'Your First JavaScript - Baby Steps',
+                    duration: '20 min',
+                    content: `
+# Your First JavaScript - Let's Code Together!
+
+## Step 1: Print to Console
+
+The easiest thing in JavaScript is printing text:
+
+\`\`\`javascript
+console.log('Hello World!');
+\`\`\`
+
+**What it does:** Shows "Hello World!" in the console (F12 → Console)
+
+**Try different things:**
+\`\`\`javascript
+console.log('My name is John');
+console.log(2 + 2);
+console.log('I am', 20, 'years old');
+\`\`\`
+
+## Step 2: Create Variables
+
+Variables store information:
+
+\`\`\`javascript
+let name = "John";
+let age = 20;
+let isStudent = true;
+
+console.log(name);    // Prints: John
+console.log(age);     // Prints: 20
+console.log(isStudent); // Prints: true
+\`\`\`
+
+**Variable naming rules:**
+- Start with letter, $, or _
+- Can contain letters, numbers, $, _
+- Can't use spaces
+- Can't use reserved words (let, if, for, etc.)
+
+**Good names:**
+\`\`\`javascript
+let firstName = "John";
+let user_age = 20;
+let $price = 100;
+let _temp = 50;
+\`\`\`
+
+**Bad names:**
+\`\`\`javascript
+let first name = "John";  // ❌ Space!
+let 1name = "John";       // ❌ Starts with number!
+let let = "John";         // ❌ Reserved word!
+\`\`\`
+
+## Step 3: Do Math
+
+JavaScript can calculate:
+
+\`\`\`javascript
+let x = 10;
+let y = 5;
+
+console.log(x + y);  // 15 (addition)
+console.log(x - y);  // 5  (subtraction)
+console.log(x * y);  // 50 (multiplication)
+console.log(x / y);  // 2  (division)
+console.log(x % y);  // 0  (remainder/modulo)
+\`\`\`
+
+**Combine with variables:**
+\`\`\`javascript
+let price = 100;
+let discount = 20;
+let finalPrice = price - discount;
+
+console.log('Final price:', finalPrice);  // 80
+\`\`\`
+
+## Step 4: Join Text (Concatenation)
+
+Combine text with +:
+
+\`\`\`javascript
+let firstName = "John";
+let lastName = "Doe";
+let fullName = firstName + " " + lastName;
+
+console.log(fullName);  // "John Doe"
+\`\`\`
+
+**Better way (Template Literals):**
+\`\`\`javascript
+let name = "John";
+let age = 20;
+
+console.log(\`My name is \${name} and I am \${age} years old\`);
+// "My name is John and I am 20 years old"
+\`\`\`
+
+**Note:** Use backticks (\`) not quotes!
+
+## Step 5: Get User Input
+
+Ask user for input:
+
+\`\`\`javascript
+let name = prompt('What is your name?');
+console.log('Hello', name);
+\`\`\`
+
+**Show alert:**
+\`\`\`javascript
+alert('Welcome to my website!');
+\`\`\`
+
+## Step 6: Make Decisions (if/else)
+
+\`\`\`javascript
+let age = 18;
+
+if (age >= 18) {
+    console.log('You are an adult');
+} else {
+    console.log('You are a minor');
+}
+\`\`\`
+
+**Comparison operators:**
+- \`==\` equal to
+- \`!=\` not equal to
+- \`>\` greater than
+- \`<\` less than
+- \`>=\` greater than or equal
+- \`<=\` less than or equal
+
+---
+
+## Your Mission: Build a Simple Calculator!
+
+Create a calculator that:
+1. Stores two numbers in variables
+2. Calculates sum, difference, product, and quotient
+3. Prints all results to console
+                    `,
+                    tasks: [
+                        { id: 1, description: 'Create two number variables', completed: false, regex: /let\s+\w+\s*=\s*\d+/ },
+                        { id: 2, description: 'Calculate sum (addition)', completed: false, regex: /\+/ },
+                        { id: 3, description: 'Calculate difference (subtraction)', completed: false, regex: /-/ },
+                        { id: 4, description: 'Calculate product (multiplication)', completed: false, regex: /\*/ },
+                        { id: 5, description: 'Use console.log to print results', completed: false, regex: /console\.log/ }
+                    ],
+                    files: [
+                        { name: 'index.html', language: 'html', content: `<!DOCTYPE html>
+<html>
+<head>
+    <title>My First JavaScript</title>
+</head>
+<body>
+    <h1>Open Console (F12) to see output!</h1>
+    <script src="script.js"></script>
+</body>
+</html>` },
+                        { name: 'style.css', language: 'css', content: '' },
+                        { name: 'script.js', language: 'javascript', content: `// Your First JavaScript Calculator!
+
+// Step 1: Create two number variables
+let num1 = 10;
+let num2 = 5;
+
+// Step 2: Calculate sum
+
+
+// Step 3: Calculate difference
+
+
+// Step 4: Calculate product
+
+
+// Step 5: Calculate quotient
+
+
+// Step 6: Print all results
+console.log('Number 1:', num1);
+console.log('Number 2:', num2);
+// Print your calculations here
+
+` }
+                    ]
+                },
+                {
+                    id: 'js-0-3',
+                    type: CONTENT_TYPES.INFORMATIONAL,
+                    title: 'Understanding Data Types',
+                    duration: '10 min read',
+                    content: `
+# JavaScript Data Types - Complete Beginner Guide
+
+## What Are Data Types?
+
+Data types are **categories** of information. Like how in real life we have:
+- Numbers (1, 2, 3)
+- Words ("hello", "world")
+- True/False (yes/no)
+
+JavaScript has the same!
+
+## The Main Data Types
+
+### 1. Number
+
+Any number, with or without decimals:
+
+\`\`\`javascript
+let age = 20;
+let price = 99.99;
+let temperature = -5;
+let big = 1000000;
+\`\`\`
+
+**Math operations:**
+\`\`\`javascript
+let x = 10;
+let y = 3;
+
+console.log(x + y);  // 13
+console.log(x - y);  // 7
+console.log(x * y);  // 30
+console.log(x / y);  // 3.333...
+console.log(x % y);  // 1 (remainder)
+\`\`\`
+
+### 2. String
+
+Text, wrapped in quotes:
+
+\`\`\`javascript
+let name = "John";
+let message = 'Hello World';
+let template = \`My name is \${name}\`;
+\`\`\`
+
+**Three ways to write strings:**
+- Double quotes: \`"text"\`
+- Single quotes: \`'text'\`
+- Backticks: \`\`text\`\` (can include variables!)
+
+**String operations:**
+\`\`\`javascript
+let first = "John";
+let last = "Doe";
+
+// Concatenation (joining)
+let full = first + " " + last;  // "John Doe"
+
+// Template literal (better!)
+let full2 = \`\${first} \${last}\`;  // "John Doe"
+
+// Length
+console.log(first.length);  // 4
+
+// Uppercase/Lowercase
+console.log(first.toUpperCase());  // "JOHN"
+console.log(first.toLowerCase());  // "john"
+\`\`\`
+
+### 3. Boolean
+
+Only two values: \`true\` or \`false\`
+
+\`\`\`javascript
+let isStudent = true;
+let isGraduated = false;
+let hasLicense = true;
+\`\`\`
+
+**Used in conditions:**
+\`\`\`javascript
+let age = 20;
+let isAdult = age >= 18;  // true
+
+if (isAdult) {
+    console.log('You can vote!');
+}
+\`\`\`
+
+### 4. Undefined
+
+Variable declared but no value assigned:
+
+\`\`\`javascript
+let x;
+console.log(x);  // undefined
+\`\`\`
+
+### 5. Null
+
+Intentionally empty value:
+
+\`\`\`javascript
+let user = null;  // No user logged in
+\`\`\`
+
+**Difference:**
+- \`undefined\` = "I forgot to set a value"
+- \`null\` = "I intentionally set it to empty"
+
+## Checking Data Types
+
+Use \`typeof\`:
+
+\`\`\`javascript
+console.log(typeof 42);          // "number"
+console.log(typeof "hello");     // "string"
+console.log(typeof true);        // "boolean"
+console.log(typeof undefined);   // "undefined"
+console.log(typeof null);        // "object" (weird bug!)
+\`\`\`
+
+## Type Conversion
+
+### String to Number
+
+\`\`\`javascript
+let str = "123";
+let num = Number(str);  // 123
+
+// Or use parseInt/parseFloat
+let num2 = parseInt("123");    // 123
+let num3 = parseFloat("12.5"); // 12.5
+\`\`\`
+
+### Number to String
+
+\`\`\`javascript
+let num = 123;
+let str = String(num);  // "123"
+
+// Or use toString()
+let str2 = num.toString();  // "123"
+\`\`\`
+
+### To Boolean
+
+\`\`\`javascript
+Boolean(1);      // true
+Boolean(0);      // false
+Boolean("hi");   // true
+Boolean("");     // false
+Boolean(null);   // false
+Boolean(undefined); // false
+\`\`\`
+
+## Truthy and Falsy Values
+
+Some values are "falsy" (treated as false):
+- \`false\`
+- \`0\`
+- \`""\` (empty string)
+- \`null\`
+- \`undefined\`
+- \`NaN\` (Not a Number)
+
+Everything else is "truthy" (treated as true)!
+
+\`\`\`javascript
+if ("hello") {
+    console.log('This runs!');  // Runs! "hello" is truthy
+}
+
+if (0) {
+    console.log('This does NOT run');  // Doesn't run! 0 is falsy
+}
+\`\`\`
+
+## Common Type Mistakes
+
+❌ **Adding number and string:**
+\`\`\`javascript
+let result = 5 + "5";
+console.log(result);  // "55" (string!)
+\`\`\`
+
+✅ **Convert first:**
+\`\`\`javascript
+let result = 5 + Number("5");
+console.log(result);  // 10 (number!)
+\`\`\`
+
+❌ **Comparing different types:**
+\`\`\`javascript
+console.log(5 == "5");   // true (converts types!)
+console.log(5 === "5");  // false (strict comparison)
+\`\`\`
+
+✅ **Use === for strict comparison:**
+\`\`\`javascript
+console.log(5 === 5);    // true
+console.log(5 === "5");  // false
+\`\`\`
+
+## Pro Tips
+
+1. **Use \`===\` instead of \`==\`** for comparisons
+2. **Use template literals** (\`\`) for strings with variables
+3. **Check types** with \`typeof\` when debugging
+4. **Convert types explicitly** instead of relying on automatic conversion
+5. **Use meaningful variable names** that indicate the type: \`userAge\`, \`isActive\`, \`userName\`
+
+Now you understand data types! 🎯
+                    `
+                },
+                {
+                    id: 'js-0-quiz',
+                    type: CONTENT_TYPES.QUIZ,
+                    title: 'Absolute Beginner Quiz',
+                    duration: '5 min',
+                    questions: [
+                        {
+                            id: 'q1',
+                            question: 'What does console.log() do?',
+                            options: ['Shows a popup', 'Prints to the console', 'Creates a variable', 'Deletes code'],
+                            correctIndex: 1,
+                            explanation: 'console.log() prints output to the browser console (F12 → Console). Great for debugging!'
+                        },
+                        {
+                            id: 'q2',
+                            question: 'Which is the correct way to create a variable?',
+                            options: ['variable name = "John"', 'let name = "John"', 'name = John', 'var name == "John"'],
+                            correctIndex: 1,
+                            explanation: 'Use "let" keyword, followed by variable name, = sign, and value. Strings need quotes!'
+                        },
+                        {
+                            id: 'q3',
+                            question: 'What is the result of: 5 + "5"',
+                            options: ['10', '"55"', 'Error', '25'],
+                            correctIndex: 1,
+                            explanation: 'When you add a number and string, JavaScript converts the number to string and concatenates: "55"'
+                        },
+                        {
+                            id: 'q4',
+                            question: 'Which symbol is used for comments in JavaScript?',
+                            options: ['<!-- -->', '//', '#', '/* */'],
+                            correctIndex: 1,
+                            explanation: '// for single-line comments, /* */ for multi-line comments. HTML uses <!-- -->, Python uses #'
+                        },
+                        {
+                            id: 'q5',
+                            question: 'What data type is: true',
+                            options: ['String', 'Number', 'Boolean', 'Undefined'],
+                            correctIndex: 2,
+                            explanation: 'true and false are Boolean values - they represent yes/no, on/off, true/false.'
+                        }
+                    ]
+                }
+            ]
+        },
+        // ============================================
         // UNIT 1: Introduction to JavaScript
         // ============================================
         {
